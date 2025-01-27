@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>game.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #5f826b; font-style: italic;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+.s6 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+game.py</font>
+</center></td></tr></table>
+<pre><span class="s0">&quot;&quot;&quot; 
+Author: [Róża Job] 
+Date: [13.01.2025] 
+Course: Python I, Lab 2 
+Assignment: [Gra z elementami graficznymi] 
+Description: 
+    [] 
+Version: [Wersja np. 1.0] 
+Notes: 
+    [Dodatkowe informacje, uwagi dotyczące kodu] 
+&quot;&quot;&quot;</span>
+<span class="s2">import </span><span class="s1">pygame</span>
+
+<span class="s1">print</span><span class="s3">(</span><span class="s1">pygame</span><span class="s3">.</span><span class="s1">__version__</span><span class="s3">)</span>
+
+<span class="s2">import </span><span class="s1">pygame</span>
+
+
+<span class="s2">def </span><span class="s1">draw_line_outline</span><span class="s3">(</span><span class="s1">screen</span><span class="s3">, </span><span class="s1">start_x</span><span class="s3">, </span><span class="s1">start_y</span><span class="s3">, </span><span class="s1">end_x</span><span class="s3">, </span><span class="s1">end_y</span><span class="s3">, </span><span class="s1">color</span><span class="s3">, </span><span class="s1">thickness</span><span class="s3">=</span><span class="s4">1</span><span class="s3">):</span>
+    <span class="s0">&quot;&quot;&quot; 
+    Rysuje linię między dwoma punktami. 
+ 
+    screen - ekran Pygame. 
+    start_x, start_y - współrzędne początku linii. 
+    end_x, end_y - współrzędne końca linii. 
+    color - kolor linii (RGB). 
+    thickness - grubość linii (domyślnie 1). 
+    &quot;&quot;&quot;</span>
+    <span class="s1">pygame</span><span class="s3">.</span><span class="s1">draw</span><span class="s3">.</span><span class="s1">line</span><span class="s3">(</span><span class="s1">screen</span><span class="s3">, </span><span class="s1">color</span><span class="s3">, (</span><span class="s1">start_x</span><span class="s3">, </span><span class="s1">start_y</span><span class="s3">), (</span><span class="s1">end_x</span><span class="s3">, </span><span class="s1">end_y</span><span class="s3">), </span><span class="s1">thickness</span><span class="s3">)</span>
+
+
+
+<span class="s2">def </span><span class="s1">draw_circle_outline</span><span class="s3">(</span><span class="s1">screen</span><span class="s3">, </span><span class="s1">center_x</span><span class="s3">, </span><span class="s1">center_y</span><span class="s3">, </span><span class="s1">radius</span><span class="s3">, </span><span class="s1">color</span><span class="s3">, </span><span class="s1">thickness</span><span class="s3">=</span><span class="s4">1</span><span class="s3">):</span>
+    <span class="s0">&quot;&quot;&quot; 
+    Rysuje okrąg na ekranie (tylko kontur). 
+ 
+    screen - ekran Pygame. 
+    center_x, center_y - współrzędne środka okręgu. 
+    radius - promień okręgu. 
+    color - kolor okręgu (RGB). 
+    thickness - grubość obramowania okręgu. 
+    &quot;&quot;&quot;</span>
+    <span class="s1">pygame</span><span class="s3">.</span><span class="s1">draw</span><span class="s3">.</span><span class="s1">circle</span><span class="s3">(</span><span class="s1">screen</span><span class="s3">, </span><span class="s1">color</span><span class="s3">, (</span><span class="s1">center_x</span><span class="s3">, </span><span class="s1">center_y</span><span class="s3">), </span><span class="s1">radius</span><span class="s3">, </span><span class="s1">thickness</span><span class="s3">)</span>
+
+
+<span class="s2">def </span><span class="s1">draw_rectangle_outline</span><span class="s3">(</span><span class="s1">screen</span><span class="s3">, </span><span class="s1">x</span><span class="s3">, </span><span class="s1">y</span><span class="s3">, </span><span class="s1">width</span><span class="s3">, </span><span class="s1">height</span><span class="s3">, </span><span class="s1">color</span><span class="s3">, </span><span class="s1">thickness</span><span class="s3">=</span><span class="s4">1</span><span class="s3">):</span>
+    <span class="s0">&quot;&quot;&quot; 
+    Rysuje prostokąt na ekranie (tylko kontur). 
+ 
+    screen - ekran Pygame. 
+    x, y - współrzędne lewego górnego rogu prostokąta. 
+    width, height - szerokość i wysokość prostokąta. 
+    color - kolor prostokąta (RGB). 
+    thickness - grubość obramowania prostokąta. 
+    &quot;&quot;&quot;</span>
+    <span class="s1">pygame</span><span class="s3">.</span><span class="s1">draw</span><span class="s3">.</span><span class="s1">rect</span><span class="s3">(</span><span class="s1">screen</span><span class="s3">, </span><span class="s1">color</span><span class="s3">, (</span><span class="s1">x</span><span class="s3">, </span><span class="s1">y</span><span class="s3">, </span><span class="s1">width</span><span class="s3">, </span><span class="s1">height</span><span class="s3">), </span><span class="s1">thickness</span><span class="s3">)</span>
+
+
+<span class="s2">if </span><span class="s1">__name__ </span><span class="s3">== </span><span class="s5">&quot;__main__&quot;</span><span class="s3">:</span>
+    <span class="s1">pygame</span><span class="s3">.</span><span class="s1">init</span><span class="s3">()</span>
+    <span class="s1">screen </span><span class="s3">= </span><span class="s1">pygame</span><span class="s3">.</span><span class="s1">display</span><span class="s3">.</span><span class="s1">set_mode</span><span class="s3">((</span><span class="s4">800</span><span class="s3">, </span><span class="s4">600</span><span class="s3">))</span>
+    <span class="s1">pygame</span><span class="s3">.</span><span class="s1">display</span><span class="s3">.</span><span class="s1">set_caption</span><span class="s3">(</span><span class="s5">&quot;Rysowanie konturów&quot;</span><span class="s3">)</span>
+
+    <span class="s1">running </span><span class="s3">= </span><span class="s2">True</span>
+
+    <span class="s2">while </span><span class="s1">running</span><span class="s3">:</span>
+        <span class="s2">for </span><span class="s1">event </span><span class="s2">in </span><span class="s1">pygame</span><span class="s3">.</span><span class="s1">event</span><span class="s3">.</span><span class="s1">get</span><span class="s3">():</span>
+            <span class="s2">if </span><span class="s1">event</span><span class="s3">.</span><span class="s1">type </span><span class="s3">== </span><span class="s1">pygame</span><span class="s3">.</span><span class="s1">QUIT</span><span class="s3">:</span>
+                <span class="s1">running </span><span class="s3">= </span><span class="s2">False</span>
+
+        <span class="s1">screen</span><span class="s3">.</span><span class="s1">fill</span><span class="s3">((</span><span class="s4">255</span><span class="s3">, </span><span class="s4">255</span><span class="s3">, </span><span class="s4">255</span><span class="s3">))  </span><span class="s6"># Wypełnienie białym kolorem</span>
+
+        <span class="s6"># Przykładowe rysowanie konturów</span>
+        <span class="s1">draw_line_outline</span><span class="s3">(</span><span class="s1">screen</span><span class="s3">, </span><span class="s4">50</span><span class="s3">, </span><span class="s4">50</span><span class="s3">, </span><span class="s4">200</span><span class="s3">, </span><span class="s4">50</span><span class="s3">, (</span><span class="s4">255</span><span class="s3">, </span><span class="s4">0</span><span class="s3">, </span><span class="s4">0</span><span class="s3">), </span><span class="s1">thickness</span><span class="s3">=</span><span class="s4">5</span><span class="s3">)  </span><span class="s6"># Czerwona linia</span>
+        <span class="s1">draw_circle_outline</span><span class="s3">(</span><span class="s1">screen</span><span class="s3">, </span><span class="s4">400</span><span class="s3">, </span><span class="s4">300</span><span class="s3">, </span><span class="s4">50</span><span class="s3">, (</span><span class="s4">0</span><span class="s3">, </span><span class="s4">255</span><span class="s3">, </span><span class="s4">0</span><span class="s3">), </span><span class="s1">thickness</span><span class="s3">=</span><span class="s4">5</span><span class="s3">)  </span><span class="s6"># Zielony okrąg kontur</span>
+        <span class="s1">draw_rectangle_outline</span><span class="s3">(</span><span class="s1">screen</span><span class="s3">, </span><span class="s4">500</span><span class="s3">, </span><span class="s4">100</span><span class="s3">, </span><span class="s4">150</span><span class="s3">, </span><span class="s4">100</span><span class="s3">, (</span><span class="s4">0</span><span class="s3">, </span><span class="s4">0</span><span class="s3">, </span><span class="s4">255</span><span class="s3">), </span><span class="s1">thickness</span><span class="s3">=</span><span class="s4">3</span><span class="s3">)  </span><span class="s6"># Niebieski prostokąt kontur</span>
+
+        <span class="s1">pygame</span><span class="s3">.</span><span class="s1">display</span><span class="s3">.</span><span class="s1">flip</span><span class="s3">()</span>
+
+    <span class="s1">pygame</span><span class="s3">.</span><span class="s1">quit</span><span class="s3">()</span>
+
+
+
+
+
+</pre>
+</body>
+</html>
